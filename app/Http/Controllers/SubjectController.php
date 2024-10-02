@@ -55,13 +55,17 @@ class SubjectController extends Controller
     }
     public function destroy($id)
     {
-        // Find the subject by ID
-        $subject = Subject::findOrFail($id);
+        try {
+            // Find the subject by ID
+            $subject = Subject::findOrFail($id);
 
-        // Delete the subject
-        $subject->delete();
+            // Delete the subject
+            $subject->delete();
 
-        // Return a JSON response
-        return response()->json(['success' => 'Subject deleted successfully.']);
+            // Return a JSON response
+            return response()->json(['success' => 'Subject deleted successfully.']);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'There was an error deleting the subject.'], 500);
+        }
     }
 }

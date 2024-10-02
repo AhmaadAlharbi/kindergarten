@@ -45,7 +45,8 @@
 				<li class="slide__category"><span class="category-name">Multi Levels</span></li>
 				<!-- End::slide__category -->
 
-				<!-- Start::slide -->
+				<!-- Start::slide  -->
+				{{-- subjects --}}
 				<li class="slide has-sub">
 					<a href="javascript:void(0);" class="side-menu__item">
 						<svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"
@@ -66,6 +67,48 @@
 						</li>
 						<li class="slide has-sub">
 							<a href="{{route('subjects.create')}}" class="side-menu__item">add subjects
+							</a>
+							{{-- <ul class="slide-menu child2">
+								<li class="slide">
+									<a href="javascript:void(0);" class="side-menu__item">Level-2-1</a>
+								</li>
+								<li class="slide has-sub">
+									<a href="javascript:void(0);" class="side-menu__item">Level-2-2
+										<i class="fe fe-chevron-right side-menu__angle"></i></a>
+									<ul class="slide-menu child3">
+										<li class="slide">
+											<a href="javascript:void(0);" class="side-menu__item">Level-2-2-1</a>
+										</li>
+										<li class="slide">
+											<a href="javascript:void(0);" class="side-menu__item">Level-2-2-2</a>
+										</li>
+									</ul>
+								</li>
+							</ul> --}}
+						</li>
+					</ul>
+				</li>
+				{{-- Department --}}
+				<li class="slide has-sub">
+					<a href="javascript:void(0);" class="side-menu__item">
+						<svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"
+							style="width: 16px; height: 16px;">
+							<path fill="none" d="M0 0h24v24H0z" />
+							<path
+								d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h16V4H4zM8 6h8v2H8V6zm0 4h8v2H8v-2z" />
+						</svg>
+						<span class="side-menu__label">Departments</span>
+						<i class="fe fe-chevron-right side-menu__angle"></i>
+					</a>
+					<ul class="slide-menu child1">
+						<li class="slide side-menu__label1">
+							<a href="javascript:void(0);">Menu Levels</a>
+						</li>
+						<li class="slide">
+							<a href="{{route('departments.index')}}" class="side-menu__item">departments List</a>
+						</li>
+						<li class="slide has-sub">
+							<a href="{{route('departments.create')}}" class="side-menu__item">add departments
 							</a>
 							{{-- <ul class="slide-menu child2">
 								<li class="slide">
