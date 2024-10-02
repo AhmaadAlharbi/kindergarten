@@ -25,6 +25,7 @@ class StudentFactory extends Factory
             'guardian_id' => Guardian::factory(), // Link to a guardian
             'grade_id' => Grade::factory(),
             'classroom_id' => Classroom::factory(), // Link to a classroom
+            'address' => $this->faker->address,
             'date_of_birth' => $this->faker->date(), // Generate a random date of birth
             'civil_id' => $this->faker->unique()->numerify('##########'), // Generate a unique civil ID
         ];

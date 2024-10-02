@@ -1,94 +1,100 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light" data-menu-styles="light" data-toggled="close">
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light"
+    data-menu-styles="light" data-toggled="close">
 
-    <head>
+<head>
 
-        <!-- Meta Data -->
-        <meta charset="UTF-8">
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
-        <meta name="Author" content="Spruko Technologies Private Limited">
-        <meta name="keywords" content="admin dashboard template,admin panel html,bootstrap dashboard,admin dashboard,html template,template dashboard html,html css,bootstrap 5 admin template,bootstrap admin template,bootstrap 5 dashboard,admin panel html template,dashboard template bootstrap,admin dashboard html template,bootstrap admin panel,simple html template,admin dashboard bootstrap">
-        
-		<!-- TITLE -->
-        <title> Valex - Laravel Bootstrap 5 Premium Admin & Dashboard Template </title>
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
+    <meta name="Author" content="Spruko Technologies Private Limited">
+    <meta name="keywords"
+        content="admin dashboard template,admin panel html,bootstrap dashboard,admin dashboard,html template,template dashboard html,html css,bootstrap 5 admin template,bootstrap admin template,bootstrap 5 dashboard,admin panel html template,dashboard template bootstrap,admin dashboard html template,bootstrap admin panel,simple html template,admin dashboard bootstrap">
 
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="{{asset('build/assets/images/brand-logos/favicon.ico')}}">
+    <!-- TITLE -->
+    <title> Valex - Laravel Bootstrap 5 Premium Admin & Dashboard Template </title>
 
-        <!-- Main Theme Js -->
-        <script src="{{asset('build/assets/main.js')}}"></script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{asset('build/assets/images/brand-logos/favicon.ico')}}">
 
-        <!-- ICONS CSS -->
-        <link href="{{asset('build/assets/icon-fonts/icons.css')}}" rel="stylesheet">
+    <!-- Main Theme Js -->
+    <script src="{{asset('build/assets/main.js')}}"></script>
 
-        @include('layouts.components.styles')
-      
-        <!-- APP CSS & APP SCSS -->
-        @vite(['resources/sass/app.scss'])
+    <!-- ICONS CSS -->
+    <link href="{{asset('build/assets/icon-fonts/icons.css')}}" rel="stylesheet">
 
-        @yield('styles')
+    @include('layouts.components.styles')
 
-    </head>
+    <!-- APP CSS & APP SCSS -->
+    @livewireStyles
 
-    <body class="">
+    @vite(['resources/sass/app.scss'])
 
-        <!-- Switcher -->
-        @include('layouts.components.switcher')
-        <!-- End switcher -->
+    @yield('styles')
 
-        <!-- Loader -->
-        <div id="loader" >
-            <img src="{{asset('build/assets/images/media/loader.svg')}}" alt="">
-        </div>
-        <!-- Loader -->
+</head>
 
-        <div class="page">
+<body class="">
 
-            <!-- Main-Header -->
-            @include('layouts.components.main-header')
-            <!-- End Main-Header -->
+    <!-- Switcher -->
+    @include('layouts.components.switcher')
+    <!-- End switcher -->
 
-            <!-- Country-selector modal -->
-            @include('layouts.components.modal')
-            <!-- End Country-selector modal -->
+    <!-- Loader -->
+    <div id="loader">
+        <img src="{{asset('build/assets/images/media/loader.svg')}}" alt="">
+    </div>
+    <!-- Loader -->
 
-            <!--Main-Sidebar-->
-            @include('layouts.components.main-sidebar')
-            <!-- End Main-Sidebar-->
+    <div class="page">
 
-            <!-- Start::app-content -->
-            <div class="main-content app-content">
-                <div class="container-fluid">
+        <!-- Main-Header -->
+        @include('layouts.components.main-header')
+        <!-- End Main-Header -->
 
-                    @yield('content')
-                    
-                </div>
+        <!-- Country-selector modal -->
+        @include('layouts.components.modal')
+        <!-- End Country-selector modal -->
+
+        <!--Main-Sidebar-->
+        @include('layouts.components.main-sidebar')
+        <!-- End Main-Sidebar-->
+
+        <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+                @yield('content')
+
             </div>
-            <!-- End::content  -->
-
-            <!-- Footer opened -->
-            @include('layouts.components.footer')
-            <!-- End Footer -->
-
-            @yield('modals')  
-
         </div>
+        <!-- End::content  -->
 
-        <!-- SCRIPTS -->
-        @include('layouts.components.scripts')
+        <!-- Footer opened -->
+        @include('layouts.components.footer')
+        <!-- End Footer -->
 
-        <!-- Sticky JS -->
-        <script src="{{asset('build/assets/sticky.js')}}"></script>
+        @yield('modals')
 
-        <!-- Custom-Switcher JS -->
-        @vite('resources/assets/js/custom-switcher.js')
+    </div>
 
-        <!-- APP JS-->
-		@vite('resources/js/app.js')       
-        <!-- END SCRIPTS -->
+    <!-- SCRIPTS -->
+    @include('layouts.components.scripts')
+    @livewireScripts
 
-    </body> 
+    <!-- Sticky JS -->
+    <script src="{{asset('build/assets/sticky.js')}}"></script>
+
+    <!-- Custom-Switcher JS -->
+    @vite('resources/assets/js/custom-switcher.js')
+
+    <!-- APP JS-->
+    @vite('resources/js/app.js')
+    <!-- END SCRIPTS -->
+
+
+</body>
 
 </html>

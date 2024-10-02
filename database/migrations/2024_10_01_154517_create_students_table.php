@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('guardian_id')->constrained('guardians')->onDelete('cascade'); // Link to guardians
             $table->foreignId('grade_id')->constrained('grades')->onDelete('cascade'); // Link to classrooms
             $table->foreignId('classroom_id')->constrained('classrooms')->onDelete('cascade'); // Link to classrooms
+            $table->string('address')->nullable();
             $table->date('date_of_birth'); // Date of birth
             $table->string('civil_id')->unique(); // Civil ID (unique identifier)
             $table->timestamps();
