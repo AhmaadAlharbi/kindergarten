@@ -7,6 +7,8 @@ use App\Models\Student;
 use App\Models\Guardian;
 use App\Models\Classroom;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class StudentController extends Controller
 {
@@ -24,18 +26,47 @@ class StudentController extends Controller
         return view('students.create', compact('grades', 'classrooms', 'guardians'));
     }
 
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'name' => 'required|string|max:255',
+    //         'guardian_id' => 'required|exists:guardians,id',
+    //         'grade_id' => 'required|exists:grades,id',
+    //         'classroom_id' => 'required|exists:classrooms,id',
+    //         'date_of_birth' => 'required|date',
+    //         'civil_id' => 'nullable|string',
+    //     ]);
+
+    //     Student::create($request->all());
+    //     return redirect()->route('students.index')->with('success', 'Student created successfully.');
+    // }
     public function store(Request $request)
     {
-        $request->validate([
+        // Validation
+        $validatedData = $request->validate([
             'name' => 'required|string|max:255',
-            'guardian_id' => 'required|exists:guardians,id',
+            'phone' => 'nullable|string|max:15',
+            'civil_id' => 'nullable|string|max:12',
+            'address' => 'nullable|string|max:255',
+            'date_of_birth' => 'nullable|date',
             'grade_id' => 'required|exists:grades,id',
             'classroom_id' => 'required|exists:classrooms,id',
-            'date_of_birth' => 'required|date',
-            'civil_id' => 'nullable|string',
+            'guardian_id' => 'required|exists:guardians,id',
         ]);
 
-        Student::create($request->all());
+        // Create new student
+        Student::create([
+            'name' => $validatedData['name'],
+            'phone' => $validatedData['phone'],
+            'civil_id' => $validatedData['civil_id'],
+            'address' => $validatedData['address'],
+            'date_of_birth' => $validatedData['date_of_birth'],
+            'grade_id' => $validatedData['grade_id'],
+            'classroom_id' => $validatedData['classroom_id'],
+            'guardian_id' => $validatedData['guardian_id'],
+        ]);
+
+        // Redirect with success message
         return redirect()->route('students.index')->with('success', 'Student created successfully.');
     }
 

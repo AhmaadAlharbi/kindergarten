@@ -18,13 +18,16 @@ class ClassroomSelector extends Component
     public function mount($studentId = null)
     {
         $this->grades = Grade::all();
-
+        $classrooms = Classroom::all();
         if ($studentId) {
             $this->student = Student::find($studentId);
             if ($this->student) {
                 $this->selectedGrade = $this->student->grade_id;
+                foreach ($classrooms as $classroom) {
+                    $this->classrooms = Classroom::where('grade_id', $this->selectedGrade)->get();
+                }
                 $this->selectedClassroom = $this->student->classroom_id;
-                $this->loadClassrooms();
+                // $this->loadClassrooms();
             }
         }
     }

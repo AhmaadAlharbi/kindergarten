@@ -15,7 +15,7 @@
 <div class="container-fluid py-4">
     <div class="row mb-4">
         <div class="col-12">
-            <h1 class="display-4 text-primary">Subjects</h1>
+            <h1 class="display-4 text-primary">Students</h1>
         </div>
     </div>
     <div class="row">
@@ -23,9 +23,9 @@
             <div class="card shadow-sm">
                 <div class="card-header bg-light">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h5 class="card-title mb-0">Subject List</h5>
-                        <a href="{{ route('teachers.create') }}" class="btn btn-primary">
-                            <i class="fas fa-plus"></i> Add New Teacher
+                        <h5 class="card-title mb-0">Studnets List</h5>
+                        <a href="{{ route('students.create') }}" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Add New Students
                         </a>
                     </div>
                 </div>
