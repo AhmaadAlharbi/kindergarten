@@ -164,7 +164,7 @@
 				{{-- Students --}}
 				<li class="slide has-sub">
 					<a href="javascript:void(0);" class="side-menu__item">
-						<i class="fas fa-chalkboard-teacher side-menu__icon" style="font-size: 16px;"></i>
+						<i class="fas fa-user-graduate side-menu__icon" style="font-size: 16px;"></i>
 						<span class="side-menu__label">Students</span>
 
 
