@@ -239,6 +239,45 @@
 						</li>
 					</ul>
 				</li>
+				{{-- classrooms --}}
+				<li class="slide has-sub">
+					<a href="javascript:void(0);" class="side-menu__item">
+						<i class="fas fa-user-graduate side-menu__icon" style="font-size: 16px;"></i>
+						<span class="side-menu__label">Classrooms</span>
+
+
+						<i class="fe fe-chevron-right side-menu__angle"></i>
+					</a>
+					<ul class="slide-menu child1">
+						<li class="slide side-menu__label1">
+							<a href="javascript:void(0);">Menu Levels</a>
+						</li>
+						<li class="slide">
+							<a href="{{route('classrooms.index')}}" class="side-menu__item">Classrooms List</a>
+						</li>
+						<li class="slide has-sub">
+							<a href="{{route('classrooms.create')}}" class="side-menu__item">add parents
+							</a>
+							{{-- <ul class="slide-menu child2">
+								<li class="slide">
+									<a href="javascript:void(0);" class="side-menu__item">Level-2-1</a>
+								</li>
+								<li class="slide has-sub">
+									<a href="javascript:void(0);" class="side-menu__item">Level-2-2
+										<i class="fe fe-chevron-right side-menu__angle"></i></a>
+									<ul class="slide-menu child3">
+										<li class="slide">
+											<a href="javascript:void(0);" class="side-menu__item">Level-2-2-1</a>
+										</li>
+										<li class="slide">
+											<a href="javascript:void(0);" class="side-menu__item">Level-2-2-2</a>
+										</li>
+									</ul>
+								</li>
+							</ul> --}}
+						</li>
+					</ul>
+				</li>
 				<!-- End::slide -->
 
 			</ul>
